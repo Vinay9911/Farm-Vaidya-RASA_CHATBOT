@@ -1,0 +1,256 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+    - namaste
+    - hello bot
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - thanks bye
+    - ok bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - okay
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - absolutely not
+
+- intent: crop_issue
+  examples: |
+    - my crop is turning [yellow](crop_color)
+    - my [wheat](crop_type) is turning [yellow](crop_color)
+    - the leaves on my [tomato](crop_type) plants are [yellow](crop_color)
+    - [yellow](crop_color) leaves on my [rice](crop_type) plants
+    - my [corn](crop_type) is looking [yellow](crop_color)
+    - my crops have [yellow](crop_color) patches
+    - my [potato](crop_type) plants have [yellow](crop_color) leaves
+    - my [cotton](crop_type) is showing [yellow](crop_color) spots
+    - my [chili](crop_type) plants are becoming [yellow](crop_color)
+    - [yellow](crop_color) color on my [soybean](crop_type) leaves
+    - my [vegetables](crop_type) are turning [yellow](crop_color)
+    - my plants are [yellow](crop_color)
+    - my [mango](crop_type) tree leaves are turning [yellow](crop_color)
+    - my [paddy](crop_type) field is becoming [yellow](crop_color)
+    - my crop has yellow leaves
+    - yellow spots on my crop
+
+- intent: inform
+  examples: |
+    - [rice](crop_type)
+    - [wheat](crop_type)
+    - [corn](crop_type)
+    - [potato](crop_type)
+    - [tomato](crop_type)
+    - [cotton](crop_type)
+    - [chili](crop_type)
+    - [soybean](crop_type)
+    - [sugarcane](crop_type)
+    - [vegetables](crop_type)
+    - [mango](crop_type)
+    - [paddy](crop_type)
+    - it's [rice](crop_type)
+    - I grow [wheat](crop_type)
+    - the crop is [corn](crop_type)
+    - I'm growing [potato](crop_type)
+    - my farm has [tomato](crop_type)
+    - we cultivate [cotton](crop_type)
+    - I have [chili](crop_type) plants
+    - our main crop is [soybean](crop_type)
+    - we have [sugarcane](crop_type) fields
+    - mostly [vegetables](crop_type)
+    - we have [mango](crop_type) trees
+    - it's a [paddy](crop_type) field
+    - [once a day](water_frequency)
+    - [twice a day](water_frequency)
+    - [every two days](water_frequency)
+    - [once a week](water_frequency)
+    - [twice a week](water_frequency)
+    - [when it looks dry](water_frequency)
+    - [daily](water_frequency)
+    - [rarely](water_frequency)
+    - I water it [once a day](water_frequency)
+    - we water [twice a day](water_frequency)
+    - irrigation is done [every two days](water_frequency)
+    - watering happens [once a week](water_frequency)
+    - water is applied [twice a week](water_frequency)
+    - I water [when it looks dry](water_frequency)
+    - watering is [daily](water_frequency)
+    - I [rarely](water_frequency) water it
+    - [sandy](soil_type)
+    - [clay](soil_type)
+    - [loam](soil_type)
+    - [silt](soil_type)
+    - [black](soil_type)
+    - [red](soil_type)
+    - [mixed](soil_type)
+    - the soil is [sandy](soil_type)
+    - we have [clay](soil_type) soil
+    - our field has [loam](soil_type) soil
+    - it's [silt](soil_type) soil
+    - our farm has [black](soil_type) soil
+    - the soil is [red](soil_type)
+    - we use [mixed](soil_type) soil
+    - [very hot](weather_condition)
+    - [rainy](weather_condition)
+    - [dry](weather_condition)
+    - [humid](weather_condition)
+    - [normal](weather_condition)
+    - [cold](weather_condition)
+    - [hot and dry](weather_condition)
+    - [hot and humid](weather_condition)
+    - [cold and dry](weather_condition)
+    - [cold and wet](weather_condition)
+    - [mostly sunny](weather_condition)
+    - [cloudy](weather_condition)
+    - [unusually cold](weather_condition)
+    - [unusually hot](weather_condition)
+    - the weather is [very hot](weather_condition)
+    - it's been [rainy](weather_condition)
+    - the conditions are [dry](weather_condition)
+    - it's quite [humid](weather_condition)
+    - weather has been [normal](weather_condition)
+    - it's been [cold](weather_condition) lately
+    - the weather is [hot and dry](weather_condition) 
+    - it's [hot and humid](weather_condition) these days
+    - recently it's been [cold and dry](weather_condition)
+    - the weather is [cold and wet](weather_condition)
+    - it's [mostly sunny](weather_condition)
+    - mostly [cloudy](weather_condition) here
+    - it's been [unusually cold](weather_condition)
+    - the weather is [unusually hot](weather_condition)
+    - I'm in [Mumbai](location)
+    - [Delhi](location)
+    - [Bangalore](location)
+    - [Chennai](location)
+    - [Kolkata](location)
+    - [Hyderabad](location)
+    - [Pune](location)
+    - [Jaipur](location)
+    - [Ahmedabad](location)
+    - [Lucknow](location)
+    - I live in [New York](location)
+    - My farm is near [London](location)
+    - I'm farming in [Tokyo](location)
+    - My fields are in [Paris](location)
+    - I'm at [Sydney](location)
+    - We're located in [Cairo](location)
+    - Our farm is in [Mexico City](location)
+    - I'm near [Rio de Janeiro](location)
+    - We farm in [Berlin](location)
+    - My lands are in [Moscow](location)
+
+- intent: ask_weather
+  examples: |
+    - what's the weather like
+    - how's the weather today
+    - what's the weather in [Mumbai](location)
+    - current weather in [Delhi](location)
+    - tell me the weather in [Bangalore](location)
+    - weather conditions in [Chennai](location)
+    - how hot is it in [Kolkata](location)
+    - is it raining in [Hyderabad](location)
+    - temperature in [Pune](location)
+    - what's the weather forecast for [Jaipur](location)
+    - how's the weather looking in [Ahmedabad](location)
+    - what's the temperature in [Lucknow](location)
+    - weather update for [Mumbai](location)
+    - is it sunny in [Delhi](location)
+    - is it cold in [Bangalore](location)
+    - check weather in [Chennai](location)
+    - what's the weather right now in [Kolkata](location)
+    - tell me about the weather in [Hyderabad](location)
+    - I want to know the weather in [Pune](location)
+    - show me the weather for [Jaipur](location)
+    - what's the current temperature in [Ahmedabad](location)
+    - how's the weather today in [Lucknow](location)
+    - weather conditions today
+    - current temperature
+    - is it going to rain today
+    - weather report for [Mumbai](location)
+    - tell me about current weather in [Delhi](location)
+    - how's the weather like in [Bangalore](location) today
+    - what's the weather like in [Chennai](location) right now
+
+- intent: ask_weather_forecast
+  examples: |
+    - what's the weather forecast
+    - forecast for [Mumbai](location)
+    - weather forecast for [Delhi](location)
+    - what's the weather going to be like in [Bangalore](location)
+    - how's the weather looking for the next few days in [Chennai](location)
+    - will it rain in [Kolkata](location) tomorrow
+    - what's the forecast for [Hyderabad](location) this week
+    - weather outlook for [Pune](location)
+    - what will the weather be like in [Jaipur](location) this weekend
+    - forecast for the next 3 days in [Ahmedabad](location)
+    - weather prediction for [Lucknow](location)
+    - will it be sunny in [Mumbai](location) tomorrow
+    - what's the weather going to be in [Delhi](location) this week
+    - tell me the forecast for [Bangalore](location)
+    - what's the weather outlook for [Chennai](location)
+    - predictions for [Kolkata](location) weather
+    - will it be hot in [Hyderabad](location) tomorrow
+    - long term forecast for [Pune](location)
+    - weather for the coming days in [Jaipur](location)
+    - what should I expect weather-wise in [Ahmedabad](location)
+    - how's the weather going to be in [Lucknow](location) this week
+    - show me the forecast
+    - what's the weather going to be like
+    - will it rain tomorrow
+    - temperature forecast
+    - is it going to be sunny
+
+- intent: ask_weather_farming_advice
+  examples: |
+    - should I water my crops today
+    - is today good for spraying pesticides
+    - good day for planting
+    - can I harvest today
+    - should I irrigate with this weather
+    - is it good weather for sowing seeds
+    - can I apply fertilizer in this weather
+    - weather advice for farming
+    - is it good weather for field work
+    - should I protect my crops from the weather
+    - is today good for outdoor farm work in [Mumbai](location)
+    - weather recommendations for farming in [Delhi](location)
+    - best farming activities for today's weather in [Bangalore](location)
+    - should I cover my crops in [Chennai](location) weather
+    - is it safe to spray in [Kolkata](location) today
+    - farming recommendations based on [Hyderabad](location) weather
+    - should I delay harvesting due to [Pune](location) weather
+    - is today good for transplanting in [Jaipur](location)
+    - weather-based farming advice for [Ahmedabad](location)
+    - what farm activities are suitable for today's weather in [Lucknow](location)
+    - what farming activities should I avoid today
+    - is the weather good for my crops
+    - weather impact on farming today
+    - weather-based recommendations for my farm
+    - how will today's weather affect my crops

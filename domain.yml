@@ -1,0 +1,94 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - crop_issue
+  - inform
+  - ask_weather
+  - ask_weather_forecast
+  - ask_weather_farming_advice
+
+entities:
+  - crop_color
+  - crop_type
+  - water_frequency
+  - soil_type
+  - weather_condition
+  - location
+
+slots:
+  crop_color:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: crop_color
+  crop_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: crop_type
+  water_frequency:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: water_frequency
+  soil_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: soil_type
+  weather_condition:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: weather_condition
+  location:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: location
+  current_weather:
+    type: text
+    mappings:
+    - type: custom
+  current_temperature:
+    type: float
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your farming assistant. How can I help you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a good day on the farm."
+
+  utter_ask_crop_type:
+    - text: "Which crop are you growing?"
+
+  utter_ask_water_frequency:
+    - text: "How often do you water your {crop_type}?"
+
+  utter_ask_soil_type:
+    - text: "What type of soil are you using for your {crop_type}?"
+
+  utter_ask_weather_condition:
+    - text: "What has the weather been like in your area recently?"
+
+  utter_ask_location:
+    - text: "Which city or location do you want weather information for?"
+
+  utter_weather_help:
+    - text: "I can provide current weather conditions or forecast for your location. This can help with planning your farming activities."
+
+actions:
+  - action_provide_diagnosis
+  - action_get_weather
+  - action_get_weather_forecast
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
