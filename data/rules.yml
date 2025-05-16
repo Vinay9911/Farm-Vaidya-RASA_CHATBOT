@@ -1,82 +1,26 @@
 version: "3.1"
 
 rules:
-- rule: Say hello anytime the user greets
+- rule: Say greet
   steps:
   - intent: greet
   - action: utter_greet
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: Say goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
-- rule: Ask for crop type after yellow crop issue
+- rule: Handle none intent
   steps:
-  - intent: crop_issue
-  - action: utter_ask_crop_type
-
-- rule: Ask for water frequency after crop type
+  - intent: none
+  - action: utter_none
+  - action: utter_ask_clarification
+- rule: Handle specific fertilizer query
   steps:
-  - intent: inform
-    entities:
-    - crop_type
-  - action: utter_ask_water_frequency
-
-- rule: Ask for soil type after water frequency
+  - intent: fertilizers
+  - action: action_classify_intent
+  - action: action_answer_query
+- rule: Handle NLU fallback
   steps:
-  - intent: inform
-    entities:
-    - water_frequency
-  - action: utter_ask_soil_type
-
-- rule: Ask for weather condition after soil type
-  steps:
-  - intent: inform
-    entities:
-    - soil_type
-  - action: utter_ask_weather_condition
-
-- rule: Provide diagnosis after weather condition
-  steps:
-  - intent: inform
-    entities:
-    - weather_condition
-  - action: action_provide_diagnosis
-
-# Weather rules
-- rule: Get weather when location is provided
-  steps:
-  - intent: ask_weather
-    entities:
-    - location
-  - action: action_get_weather
-
-- rule: Ask for location when weather is requested without location
-  steps:
-  - intent: ask_weather
-  - action: utter_ask_location
-
-- rule: Get weather forecast when location is provided
-  steps:
-  - intent: ask_weather_forecast
-    entities:
-    - location
-  - action: action_get_weather_forecast
-
-- rule: Ask for location when weather forecast is requested without location
-  steps:
-  - intent: ask_weather_forecast
-  - action: utter_ask_location
-
-- rule: Get weather advice when location is provided
-  steps:
-  - intent: ask_weather_farming_advice
-    entities:
-    - location
-  - action: action_get_weather
-
-- rule: Ask for location when weather advice is requested without location
-  steps:
-  - intent: ask_weather_farming_advice
-  - action: utter_ask_location
+  - intent: nlu_fallback
+  - action: action_classify_intent
+  - action: action_answer_query

@@ -1,256 +1,426 @@
 version: "3.1"
 
 nlu:
+- intent: coconut_general
+  examples: |
+    - Tell me about coconut cultivation in the state
+    - What is the status of coconut farming?
+    - How much area is used for coconut cultivation?
+    - Which districts grow coconuts?
+    - How does our state rank in coconut production?
+    - What is the productivity of coconut farming?
+    - Where is coconut research conducted?
+    - How can coconut farmers increase their yield?
+    - Coconut farming in [Godavari](district)
+    - Scope for improving coconut yield in [Krishna](district)
+    - How long has coconut research been at [Ambajipeta](research_station)?
+    - Coconut cultivation details
+    - Coconut farms in [Chittoor](district)
+    - State’s rank in coconut area
+    - Coconut farming in [Guntur](district)
+    - Improve coconut yield in [North Coast](district)
+    - Research at [Ambajipeta](research_station)
+    - Coconut cultivation overview
+    - State coconut farming stats
+    - Coconut research at [Vijayawada](research_station)
+    - Studies at [Ambajipeta](research_station)
+    - Coconut farming practices in our state
+    - How to boost coconut productivity?
+    - Coconut cultivation in [Kerala](state) compared to our state
+    - Tell me about coconut farming history
+    - Coconut studies at [Ambajipeta](research_station)
+    - Research facility at [Ambajipeta](research_station)
+
+- intent: climate_soils
+  examples: |
+    - What climate is suitable for coconut farming?
+    - Which soils are best for coconut cultivation?
+    - Can coconuts grow in inland areas?
+    - Ideal rainfall for coconuts?
+    - Temperature effects on coconut growth?
+    - Are coastal areas good for coconut farming?
+    - Irrigation needs for coconut cultivation?
+    - Can coconuts grow in gravelly soils?
+    - Humidity requirements for coconut farming?
+    - Soils for coconut farming in delta lands?
+    - Best soil for coconuts?
+    - Rainfall needed for coconut trees?
+    - Red soil for coconuts?
+    - Coconut farming in low humidity?
+    - Cold temperature impact on coconuts?
+    - Irrigation for coconut farms?
+    - Soil types for coconut cultivation
+    - Coconut growth in cold areas?
+    - Drainage for coconut soils?
+    - Soil and climate for coconuts
+    - Best environment for coconut trees
+    - Can coconuts grow in dry areas?
+    - Soil drainage for coconut farming
+    - Coastal climate for coconuts
+    - Not about varieties, tell me about coconut soils
+    - Weather conditions for coconut farming
+    - Best land type for coconuts
+    - Coconut cultivation environment
+
+- intent: coconut_varieties
+  examples: |
+    - What coconut varieties are grown in the state?
+    - What coconut variety is grown in the state?
+    - Tell me about [Godavari Ganga](variety)
+    - Which variety yields the most nuts?
+    - Oil content in [Vasishta Ganga](variety)?
+    - Nuts per year for [East Coast Tall](variety)?
+    - When does [Gauthami Ganga](variety) fruit?
+    - Copra content of [Abhaya Ganga](variety)?
+    - [Double Century](variety) coconut variety details
+    - Best coconut variety for tender coconuts?
+    - Oil percentage in [Vainateya Ganga](variety)?
+    - Release year of [Godavari Ganga](variety)?
+    - Varieties for [Andhra Pradesh](state)?
+    - Copra in [Vasishta Ganga](variety)?
+    - Yield of [Gauthami Ganga](variety)?
+    - Best coconut type for oil?
+    - [East Coast Tall](variety) fruiting time?
+    - Hybrid coconut varieties
+    - [Abhaya Ganga](variety) details
+    - Coconut types for [Tamil Nadu](state)
+    - Coconut variety comparison
+    - Which coconut variety grows fastest?
+    - Best variety for copra production
+    - [Godavari Ganga](variety) vs [Vasishta Ganga](variety)
+    - Coconut types for high yield
+    - Not about soils, tell me about coconut varieties
+    - List coconut varieties
+    - Tell me about coconut varietys
+    - Which coconut hybrid is released by [Ambajipeta](research_station)?
+    - Which coconut hybrid variety is released by [Ambajipeta](research_station) and which year?
+    - Coconut hybrids developed at [Ambajipeta](research_station)
+    - Release details of coconut hybrids at [Ambajipeta](research_station)
+    - Coconut breed released by [Ambajipeta](research_station)
+    - Coconut cultivar from [Ambajipeta](research_station)
+    - Coconut strain developed at [Ambajipeta](research_station)
+    - Coconut kind from [Ambajipeta](research_station)
+    - Coconut type released by research center
+
+- intent: cultivation_methods
+  examples: |
+    - How to select coconut seeds?
+    - Nursery preparation for coconuts?
+    - How to plant coconut seedlings?
+    - When to dig coconut pits?
+    - Choosing mother trees for coconut seeds?
+    - Germination rate of coconut seeds?
+    - Age of coconut seedlings for planting?
+    - Manure for coconut pits?
+    - Spacing for coconut planting?
+    - Drying coconut seed nuts?
+    - Quality coconut seedlings characteristics?
+    - When to collect seed nuts for coconuts?
+    - Soil type for coconut nursery?
+    - Pest control in coconut nursery?
+    - Planting coconuts in monsoon?
+    - Coconut seedling selection tips?
+    - Digging pits for coconuts?
+    - Coconut seed drying process?
+    - Planting coconut methods
+    - Nursery irrigation for coconuts?
+    - Soil for coconut nursery setup?
+    - Arranging coconut nuts in nursery?
+    - Best soil for coconut nursery?
+    - Spacing for coconut nuts in nursery?
+    - Planting coconut nuts in nursery?
+    - Starting coconut nursery soil type?
+    - Seed nut arrangement in coconut nursery?
+    - Nursery soil and nut placement for coconuts?
+    - Setting up coconut nursery with nuts?
+    - How to grow coconut seedlings?
+    - Coconut planting techniques
+    - Nursery management for coconuts
+    - Not about fertilizers, tell me about planting coconuts
+    - How to choose coconut nuts for planting?
+    - Preparing coconut nursery beds
+    - Coconut propagation methods
+
+- intent: nutrient_management
+  examples: |
+    - Why is [phosphorus](nutrient) important for coconuts?
+    - What does [potash](nutrient) do for coconut trees?
+    - Symptoms of [nitrogen](nutrient) deficiency?
+    - Fixing [potash](nutrient) deficiency in coconuts?
+    - Effects of [phosphorus](nutrient) deficiency?
+    - Signs of [potash](nutrient) deficiency in coconut leaves?
+    - How does [potassium](nutrient) help coconuts?
+    - Causes of barren nuts in coconuts?
+    - [Nitrogen](nutrient) deficiency in young coconut plants?
+    - Why do coconut nuts drop due to nutrients?
+    - [Potash](nutrient) for coconut oil yield?
+    - [Phosphorus](nutrient) for coconut seedlings?
+    - Signs of [nitrogen](nutrient) deficiency?
+    - Fix [potassium](nutrient) deficiency?
+    - Nutrient deficiency in coconut trees?
+    - [Potash](nutrient) for coconut yield?
+    - Cause of coconut leaf yellowing?
+    - Nutrient issues in coconuts
+    - [Phosphorus](nutrient) absorption in coconuts?
+    - Reasons for coconut nut drop?
+    - Yellowing coconut leaves reasons?
+    - Delayed spathe emergence in coconuts?
+    - Yellow leaves and delayed spathes in coconuts?
+    - Coconut tree leaves turning yellow, what to do?
+    - Nutrient issues causing yellow leaves?
+    - Why are spathes delayed in coconut trees?
+    - Coconut tree health with yellow leaves?
+    - Yellowing leaves and poor spathe growth?
+    - Fix yellow leaves in coconut orchard?
+    - Nutrient deficiency symptoms in coconuts
+    - Coconut tree nutrient problems
+    - Yellow coconut leaves treatment
+    - Not about manures, tell me about nutrients
+    - What are nitrogen deficiency symptoms in coconuts?
+    - Symptoms of nitrogen deficiency in coconut trees?
+    - How to identify nitrogen deficiency in coconuts?
+    - Nitrogen deficiency effects on coconut plants?
+    - Coconut nitrogen deficiency signs
+    - Mineral deficiency in coconut trees
+    - Nutrient shortage signs in coconuts
+
+- intent: fertilizers
+  examples: |
+    - What fertilizers for coconut trees?
+    - What fertilisers for coconut trees?
+    - Urea for a 5-year-old coconut tree?
+    - When to apply fertilizers to coconuts?
+    - When to apply fertilisers to coconuts?
+    - How to apply fertilizers to coconut trees?
+    - How to apply fertilisers to coconut trees?
+    - Fertilizer schedule for coconut plants
+    - Fertiliser schedule for coconut plants
+    - Fertilizer management for young coconut trees?
+    - Fertiliser management for young coconut trees?
+    - Fertilizers for 2-year-old coconut plants?
+    - Fertilisers for 2-year-old coconut plants?
+    - Fertilizer schedule for coconut orchards
+    - Fertiliser schedule for coconut orchards
+    - [Potash](nutrient) for fruiting coconut trees?
+    - Role of neem cake in coconut fertilization?
+    - Role of neem cake in coconut fertilisation?
+    - Manure application for coconut trees?
+    - Splitting fertilizers for coconut trees?
+    - Splitting fertilisers for coconut trees?
+    - Fertilizer for 3-year-old coconut trees?
+    - Fertiliser for 3-year-old coconut trees?
+    - Urea for coconut orchards?
+    - Fertilizer application in monsoon?
+    - Fertiliser application in monsoon?
+    - Neem cake for coconuts?
+    - Fertilizer trench for coconut trees?
+    - Fertiliser trench for coconut trees?
+    - Coconut fertilizer amounts?
+    - Coconut fertiliser amounts?
+    - Fertilizer for old coconut trees
+    - Fertiliser for old coconut trees
+    - Chemical fertilizers for coconuts
+    - Chemical fertilisers for coconuts
+    - Fertilizer doses for coconut farming
+    - Fertiliser doses for coconut farming
+    - Best fertilizers for coconut yield
+    - Best fertilisers for coconut yield
+    - Applying fertilizers to coconut orchard
+    - Applying fertilisers to coconut orchard
+    - Suggest fertiliser management schedule for 2 years old coconut plants?
+    - Suggest fertilizer management schedule for 2 years old coconut plants?
+    - Not about varieties, tell me about fertilizers
+    - Not about varieties, tell me about fertilisers
+    - Chemical nutrients for coconut trees
+    - Fertilizer plan for coconut farms
+
+- intent: inter_cultivation
+  examples: |
+    - What is inter-cultivation in coconut farming?
+    - Managing weeds in coconut orchards?
+    - Can I grow intercrops with coconuts?
+    - When to plow coconut orchards?
+    - Suitable intercrops for coconut farming?
+    - How does plowing help coconut orchards?
+    - Weed control in coconut rows?
+    - Benefits of intercrops in coconut orchards?
+    - Intercrops for [Godavari](district) coconut farms?
+    - Plowing coconut fields in monsoon?
+    - Weed control methods for coconuts?
+    - Growing banana with coconuts?
+    - Inter-cultivation benefits for coconuts?
+    - Plowing coconut rows when?
+    - Intercrops for coconut orchards?
+    - Coconut orchard weed management?
+    - Intercropping in coconut farms
+    - Plowing benefits for coconut trees?
+    - Cocoa as intercrop with coconuts?
+    - Inter-cultivation practices for coconuts
+    - Weed management in coconut farming
+    - Intercrops for coconut yield
+    - Not about fertilizers, tell me about intercrops
+    - Companion crops for coconuts
+    - Weed removal in coconut plantations
+
+- intent: organic_manures
+  examples: |
+    - Role of organic manures in coconut farming?
+    - Role of organic manure in coconut farming?
+    - Preparing organic manure for coconuts?
+    - Preparing organic manures for coconuts?
+    - Using coconut waste as manure?
+    - Using coconut waste as manures?
+    - Organic manure quantity for coconuts?
+    - Organic manures quantity for coconuts?
+    - Nutrients from organic manures for coconuts?
+    - Nutrients from organic manure for coconuts?
+    - Making compost from coconut leaves?
+    - Vermicompost for coconut trees?
+    - How organic manure stabilizes coconut yields?
+    - How organic manures stabilize coconut yields?
+    - Green manure benefits for coconut orchards?
+    - Green manures benefits for coconut orchards?
+    - Reducing chemical fertilizers with organic manures?
+    - Reducing chemical fertilisers with organic manure?
+    - Coconut husk as manure?
+    - Coconut husk as manures?
+    - Organic manure for coconut yield?
+    - Organic manures for coconut yield?
+    - Compost for coconut orchards?
+    - Green manure for coconuts?
+    - Green manures for coconuts?
+    - Organic manure preparation?
+    - Organic manures preparation?
+    - Vermicompost for coconut farming?
+    - Coconut waste composting?
+    - Organic manure nutrients for coconuts
+    - Organic manures nutrients for coconuts
+    - Reducing fertilizers with compost
+    - Reducing fertilisers with compost
+    - Benefits of organic manure in coconuts
+    - Benefits of organic manures in coconuts
+    - Composting coconut husks
+    - Organic manure for soil health
+    - Organic manures for soil health
+    - Not about nutrients, tell me about organic manures
+    - Not about nutrients, tell me about organic manure
+    - Organic compost for coconut trees
+    - Natural fertilizers for coconuts
+
 - intent: greet
   examples: |
-    - hello
-    - hi
-    - good morning
-    - good evening
-    - hey there
-    - namaste
-    - hello bot
+    - Hi
+    - Hello
+    - Hey there
+    - Good morning
+    - Hey
+    - Hi there
+    - Hiya
+    - Hello there
+    - Good afternoon
+    - Hey coconut bot
+    - Greetings
+    - Yo
 
 - intent: goodbye
   examples: |
-    - bye
-    - goodbye
-    - see you around
-    - see you later
-    - thanks bye
-    - ok bye
+    - Bye
+    - Goodbye
+    - See you later
+    - Catch you later
+    - Take care
+    - Bye bye
+    - Later
+    - Farewell
+    - See ya
+    - Good night
+    - Adios
+    - So long
 
-- intent: affirm
+- intent: none
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - sure
-    - ok
-    - okay
+    - What's the weather today?
+    - Tell me about mango farming
+    - Who is the president?
+    - How to grow rice?
+    - What's the time?
+    - Tell me a joke
+    - How to cook coconut curry?
+    - What is AI?
+    - Stock market today?
+    - About apples
+    - Banana cultivation
+    - Coconut recipe
+    - General farming tips
+    - Not about coconuts, tell me about other crops
 
-- intent: deny
+- intent: multi_intent
   examples: |
-    - no
-    - n
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - absolutely not
+    - What are the best coconut varieties and fertilizer schedule for 2-year-old trees?
+    - Tell me about coconut hybrids and how to fix yellowing leaves.
+    - Which soil is best for coconuts and how to prepare organic manure?
+    - Can you tell me about coconut planting methods and suitable intercrops?
+    - What’s the climate for coconuts and which varieties yield the most?
+    - How to select coconut seeds and what nutrients prevent nut drop?
+    - Suggest fertilizers for young coconut trees and compost preparation methods.
+    - What are coconut farming stats and best soil types for nurseries?
+    - Tell me about Ambajipeta research and fertilizer doses for 3-year-old coconuts.
+    - Which coconut types are best for oil and how to manage weed control?
 
-- intent: crop_issue
-  examples: |
-    - my crop is turning [yellow](crop_color)
-    - my [wheat](crop_type) is turning [yellow](crop_color)
-    - the leaves on my [tomato](crop_type) plants are [yellow](crop_color)
-    - [yellow](crop_color) leaves on my [rice](crop_type) plants
-    - my [corn](crop_type) is looking [yellow](crop_color)
-    - my crops have [yellow](crop_color) patches
-    - my [potato](crop_type) plants have [yellow](crop_color) leaves
-    - my [cotton](crop_type) is showing [yellow](crop_color) spots
-    - my [chili](crop_type) plants are becoming [yellow](crop_color)
-    - [yellow](crop_color) color on my [soybean](crop_type) leaves
-    - my [vegetables](crop_type) are turning [yellow](crop_color)
-    - my plants are [yellow](crop_color)
-    - my [mango](crop_type) tree leaves are turning [yellow](crop_color)
-    - my [paddy](crop_type) field is becoming [yellow](crop_color)
-    - my crop has yellow leaves
-    - yellow spots on my crop
-
-- intent: inform
-  examples: |
-    - [rice](crop_type)
-    - [wheat](crop_type)
-    - [corn](crop_type)
-    - [potato](crop_type)
-    - [tomato](crop_type)
-    - [cotton](crop_type)
-    - [chili](crop_type)
-    - [soybean](crop_type)
-    - [sugarcane](crop_type)
-    - [vegetables](crop_type)
-    - [mango](crop_type)
-    - [paddy](crop_type)
-    - it's [rice](crop_type)
-    - I grow [wheat](crop_type)
-    - the crop is [corn](crop_type)
-    - I'm growing [potato](crop_type)
-    - my farm has [tomato](crop_type)
-    - we cultivate [cotton](crop_type)
-    - I have [chili](crop_type) plants
-    - our main crop is [soybean](crop_type)
-    - we have [sugarcane](crop_type) fields
-    - mostly [vegetables](crop_type)
-    - we have [mango](crop_type) trees
-    - it's a [paddy](crop_type) field
-    - [once a day](water_frequency)
-    - [twice a day](water_frequency)
-    - [every two days](water_frequency)
-    - [once a week](water_frequency)
-    - [twice a week](water_frequency)
-    - [when it looks dry](water_frequency)
-    - [daily](water_frequency)
-    - [rarely](water_frequency)
-    - I water it [once a day](water_frequency)
-    - we water [twice a day](water_frequency)
-    - irrigation is done [every two days](water_frequency)
-    - watering happens [once a week](water_frequency)
-    - water is applied [twice a week](water_frequency)
-    - I water [when it looks dry](water_frequency)
-    - watering is [daily](water_frequency)
-    - I [rarely](water_frequency) water it
-    - [sandy](soil_type)
-    - [clay](soil_type)
-    - [loam](soil_type)
-    - [silt](soil_type)
-    - [black](soil_type)
-    - [red](soil_type)
-    - [mixed](soil_type)
-    - the soil is [sandy](soil_type)
-    - we have [clay](soil_type) soil
-    - our field has [loam](soil_type) soil
-    - it's [silt](soil_type) soil
-    - our farm has [black](soil_type) soil
-    - the soil is [red](soil_type)
-    - we use [mixed](soil_type) soil
-    - [very hot](weather_condition)
-    - [rainy](weather_condition)
-    - [dry](weather_condition)
-    - [humid](weather_condition)
-    - [normal](weather_condition)
-    - [cold](weather_condition)
-    - [hot and dry](weather_condition)
-    - [hot and humid](weather_condition)
-    - [cold and dry](weather_condition)
-    - [cold and wet](weather_condition)
-    - [mostly sunny](weather_condition)
-    - [cloudy](weather_condition)
-    - [unusually cold](weather_condition)
-    - [unusually hot](weather_condition)
-    - the weather is [very hot](weather_condition)
-    - it's been [rainy](weather_condition)
-    - the conditions are [dry](weather_condition)
-    - it's quite [humid](weather_condition)
-    - weather has been [normal](weather_condition)
-    - it's been [cold](weather_condition) lately
-    - the weather is [hot and dry](weather_condition) 
-    - it's [hot and humid](weather_condition) these days
-    - recently it's been [cold and dry](weather_condition)
-    - the weather is [cold and wet](weather_condition)
-    - it's [mostly sunny](weather_condition)
-    - mostly [cloudy](weather_condition) here
-    - it's been [unusually cold](weather_condition)
-    - the weather is [unusually hot](weather_condition)
-    - I'm in [Mumbai](location)
-    - [Delhi](location)
-    - [Bangalore](location)
-    - [Chennai](location)
-    - [Kolkata](location)
-    - [Hyderabad](location)
-    - [Pune](location)
-    - [Jaipur](location)
-    - [Ahmedabad](location)
-    - [Lucknow](location)
-    - I live in [New York](location)
-    - My farm is near [London](location)
-    - I'm farming in [Tokyo](location)
-    - My fields are in [Paris](location)
-    - I'm at [Sydney](location)
-    - We're located in [Cairo](location)
-    - Our farm is in [Mexico City](location)
-    - I'm near [Rio de Janeiro](location)
-    - We farm in [Berlin](location)
-    - My lands are in [Moscow](location)
-
-- intent: ask_weather
-  examples: |
-    - what's the weather like
-    - how's the weather today
-    - what's the weather in [Mumbai](location)
-    - current weather in [Delhi](location)
-    - tell me the weather in [Bangalore](location)
-    - weather conditions in [Chennai](location)
-    - how hot is it in [Kolkata](location)
-    - is it raining in [Hyderabad](location)
-    - temperature in [Pune](location)
-    - what's the weather forecast for [Jaipur](location)
-    - how's the weather looking in [Ahmedabad](location)
-    - what's the temperature in [Lucknow](location)
-    - weather update for [Mumbai](location)
-    - is it sunny in [Delhi](location)
-    - is it cold in [Bangalore](location)
-    - check weather in [Chennai](location)
-    - what's the weather right now in [Kolkata](location)
-    - tell me about the weather in [Hyderabad](location)
-    - I want to know the weather in [Pune](location)
-    - show me the weather for [Jaipur](location)
-    - what's the current temperature in [Ahmedabad](location)
-    - how's the weather today in [Lucknow](location)
-    - weather conditions today
-    - current temperature
-    - is it going to rain today
-    - weather report for [Mumbai](location)
-    - tell me about current weather in [Delhi](location)
-    - how's the weather like in [Bangalore](location) today
-    - what's the weather like in [Chennai](location) right now
-
-- intent: ask_weather_forecast
-  examples: |
-    - what's the weather forecast
-    - forecast for [Mumbai](location)
-    - weather forecast for [Delhi](location)
-    - what's the weather going to be like in [Bangalore](location)
-    - how's the weather looking for the next few days in [Chennai](location)
-    - will it rain in [Kolkata](location) tomorrow
-    - what's the forecast for [Hyderabad](location) this week
-    - weather outlook for [Pune](location)
-    - what will the weather be like in [Jaipur](location) this weekend
-    - forecast for the next 3 days in [Ahmedabad](location)
-    - weather prediction for [Lucknow](location)
-    - will it be sunny in [Mumbai](location) tomorrow
-    - what's the weather going to be in [Delhi](location) this week
-    - tell me the forecast for [Bangalore](location)
-    - what's the weather outlook for [Chennai](location)
-    - predictions for [Kolkata](location) weather
-    - will it be hot in [Hyderabad](location) tomorrow
-    - long term forecast for [Pune](location)
-    - weather for the coming days in [Jaipur](location)
-    - what should I expect weather-wise in [Ahmedabad](location)
-    - how's the weather going to be in [Lucknow](location) this week
-    - show me the forecast
-    - what's the weather going to be like
-    - will it rain tomorrow
-    - temperature forecast
-    - is it going to be sunny
-
-- intent: ask_weather_farming_advice
-  examples: |
-    - should I water my crops today
-    - is today good for spraying pesticides
-    - good day for planting
-    - can I harvest today
-    - should I irrigate with this weather
-    - is it good weather for sowing seeds
-    - can I apply fertilizer in this weather
-    - weather advice for farming
-    - is it good weather for field work
-    - should I protect my crops from the weather
-    - is today good for outdoor farm work in [Mumbai](location)
-    - weather recommendations for farming in [Delhi](location)
-    - best farming activities for today's weather in [Bangalore](location)
-    - should I cover my crops in [Chennai](location) weather
-    - is it safe to spray in [Kolkata](location) today
-    - farming recommendations based on [Hyderabad](location) weather
-    - should I delay harvesting due to [Pune](location) weather
-    - is today good for transplanting in [Jaipur](location)
-    - weather-based farming advice for [Ahmedabad](location)
-    - what farm activities are suitable for today's weather in [Lucknow](location)
-    - what farming activities should I avoid today
-    - is the weather good for my crops
-    - weather impact on farming today
-    - weather-based recommendations for my farm
-    - how will today's weather affect my crops
+synonyms:
+  - synonym: variety
+    examples:
+      - hybrid
+      - breed
+      - cultivar
+      - strain
+      - type
+      - kind
+  - synonym: research_station
+    examples:
+      - research center
+      - research institute
+      - station
+      - facility
+  - synonym: fertilizer
+    examples:
+      - fertiliser
+      - nutrient
+      - chemical
+      - feed
+  - synonym: manure
+    examples:
+      - compost
+      - organic fertilizer
+      - green manure
+      - vermicompost
+  - synonym: soil
+    examples:
+      - land
+      - ground
+      - earth
+  - synonym: climate
+    examples:
+      - weather
+      - environment
+      - conditions
+  - synonym: seed
+    examples:
+      - nut
+      - seedling
+      - propagule
+regex:
+  - name: variety
+    pattern: "(variety|varieties|hybrid|hybrids|breed|breeds|cultivar|cultivars|strain|strains|type|types|kind|kinds)"
+  - name: research_station
+    pattern: "(research station|research center|research institute|station|facility)"
+  - name: fertilizer
+    pattern: "(fertilizer|fertilizers|fertiliser|fertilisers|nutrient|nutrients|chemical|chemicals|feed|feeds)"
+  - name: manure
+    pattern: "(manure|manures|compost|composts|organic fertilizer|organic fertilizers|green manure|vermicompost)"
+  - name: soil
+    pattern: "(soil|soils|land|lands|ground|earth)"
+  - name: climate
+    pattern: "(climate|weather|environment|conditions)"
+  - name: seed
+    pattern: "(seed|seeds|nut|nuts|seedling|seedlings|propagule|propagules)"

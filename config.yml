@@ -1,3 +1,7 @@
+recipe: default.v1
+
+version: "3.1"
+
 language: en
 
 pipeline:
@@ -5,23 +9,26 @@ pipeline:
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
-- name: CountVectorsFeaturizer
-  analyzer: char_wb
-  min_ngram: 1
-  max_ngram: 4
 - name: DIETClassifier
-  epochs: 100
+  epochs: 300
+  constrain_similarities: true
+  intent_classification: true
+  entity_recognition: true
+- name: FallbackClassifier
+  threshold: 0.4
 - name: EntitySynonymMapper
 - name: ResponseSelector
   epochs: 100
-- name: FallbackClassifier
-  threshold: 0.3
-  ambiguity_threshold: 0.1
 
 policies:
 - name: MemoizationPolicy
-- name: TEDPolicy
+  priority: 5
+- name: AugmentedMemoizationPolicy
+  priority: 3
   max_history: 5
+- name: TEDPolicy
+  max_history: 8
   epochs: 100
 - name: RulePolicy
-assistant_id: 20250508-123646-plain-cabernet
+  priority: 4
+assistant_id: 20250515-224804-ragged-sync

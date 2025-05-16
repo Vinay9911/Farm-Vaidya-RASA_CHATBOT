@@ -1,94 +1,109 @@
 version: "3.1"
 
 intents:
+  - coconut_general
+  - climate_soils
+  - coconut_varieties
+  - cultivation_methods
+  - nutrient_management
+  - fertilizers
+  - inter_cultivation
+  - organic_manures
   - greet
   - goodbye
-  - affirm
-  - deny
-  - crop_issue
-  - inform
-  - ask_weather
-  - ask_weather_forecast
-  - ask_weather_farming_advice
+  - none
+  - nlu_fallback
+  - multi_intent
 
 entities:
-  - crop_color
-  - crop_type
-  - water_frequency
-  - soil_type
-  - weather_condition
-  - location
-
-slots:
-  crop_color:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: crop_color
-  crop_type:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: crop_type
-  water_frequency:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: water_frequency
-  soil_type:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: soil_type
-  weather_condition:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: weather_condition
-  location:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: location
-  current_weather:
-    type: text
-    mappings:
-    - type: custom
-  current_temperature:
-    type: float
-    mappings:
-    - type: custom
+  - variety
+  - district
+  - nutrient
+  - state
+  - research_station
+  - fertilizer
+  - manure
+  - soil
+  - climate
+  - seed
 
 responses:
   utter_greet:
-    - text: "Hello! I'm your farming assistant. How can I help you today?"
-
+    - text: "Hello! I'm here to help with your coconut cultivation queries. What would you like to know?"
   utter_goodbye:
-    - text: "Goodbye! Have a good day on the farm."
-
-  utter_ask_crop_type:
-    - text: "Which crop are you growing?"
-
-  utter_ask_water_frequency:
-    - text: "How often do you water your {crop_type}?"
-
-  utter_ask_soil_type:
-    - text: "What type of soil are you using for your {crop_type}?"
-
-  utter_ask_weather_condition:
-    - text: "What has the weather been like in your area recently?"
-
-  utter_ask_location:
-    - text: "Which city or location do you want weather information for?"
-
-  utter_weather_help:
-    - text: "I can provide current weather conditions or forecast for your location. This can help with planning your farming activities."
+    - text: "Goodbye! Feel free to ask more about coconut farming anytime."
+  utter_ask_clarification:
+    - text: "I'm not sure what you're asking. Could you specify if you're interested in coconut varieties, cultivation methods, fertilizers, or another coconut-related topic?"
+  utter_none:
+    - text: "Sorry, I can only help with coconut cultivation queries. Ask me about coconut farming, varieties, or fertilizers!"
 
 actions:
-  - action_provide_diagnosis
-  - action_get_weather
-  - action_get_weather_forecast
+  - action_classify_intent
+  - action_answer_query
+  - action_handle_multi_intent
+
+slots:
+  classified_intent:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  multi_intents:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+mappings:
+  variety:
+    - synonym: variety
+      examples:
+        - hybrid
+        - breed
+        - cultivar
+        - strain
+        - type
+        - kind
+  research_station:
+    - synonym: research_station
+      examples:
+        - research center
+        - research institute
+        - station
+        - facility
+  fertilizer:
+    - synonym: fertilizer
+      examples:
+        - fertiliser
+        - nutrient
+        - chemical
+        - feed
+  manure:
+    - synonym: manure
+      examples:
+        - compost
+        - organic fertilizer
+        - green manure
+        - vermicompost
+  soil:
+    - synonym: soil
+      examples:
+        - land
+        - ground
+        - earth
+  climate:
+    - synonym: climate
+      examples:
+        - weather
+        - environment
+        - conditions
+  seed:
+    - synonym: seed
+      examples:
+        - nut
+        - seedling
+        - propagule

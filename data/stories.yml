@@ -1,93 +1,86 @@
 version: "3.1"
 
 stories:
-- story: user confirms diagnosis
+- story: Handle coconut general query
   steps:
-  - action: action_provide_diagnosis
-  - intent: affirm
-  - action: utter_goodbye
-
-- story: user rejects diagnosis
+  - intent: coconut_general
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle climate and soils query
   steps:
-  - action: action_provide_diagnosis
-  - intent: deny
-  - action: utter_ask_crop_type
-
-- story: greet and goodbye
+  - intent: climate_soils
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle coconut varieties query
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: yellow crop diagnosis path
+  - intent: coconut_varieties
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle follow-up on coconut varieties
   steps:
-  - intent: crop_issue
-    entities:
-    - crop_color: yellow
-  - action: utter_ask_crop_type
-  - intent: inform
-    entities:
-    - crop_type
-  - action: utter_ask_water_frequency
-  - intent: inform
-    entities:
-    - water_frequency
-  - action: utter_ask_soil_type
-  - intent: inform
-    entities:
-    - soil_type
-  - action: utter_ask_weather_condition
-  - intent: inform
-    entities:
-    - weather_condition
-  - action: action_provide_diagnosis
-
-# Weather stories
-- story: ask weather with location
+  - intent: coconut_varieties
+  - action: action_classify_intent
+  - action: action_answer_query
+  - intent: coconut_varieties
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle cultivation methods query
   steps:
-  - intent: ask_weather
-    entities:
-    - location
-  - action: action_get_weather
-
-- story: ask weather without location
+  - intent: cultivation_methods
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle nursery preparation query
   steps:
-  - intent: ask_weather
-  - action: utter_ask_location
-  - intent: inform
-    entities:
-    - location
-  - action: action_get_weather
-
-- story: ask weather forecast with location
+  - intent: cultivation_methods
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle nutrient management query
   steps:
-  - intent: ask_weather_forecast
-    entities:
-    - location
-  - action: action_get_weather_forecast
-
-- story: ask weather forecast without location
+  - intent: nutrient_management
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle inter-cultivation query
   steps:
-  - intent: ask_weather_forecast
-  - action: utter_ask_location
-  - intent: inform
-    entities:
-    - location
-  - action: action_get_weather_forecast
-
-- story: ask farming advice based on weather with location
+  - intent: inter_cultivation
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle organic manures query
   steps:
-  - intent: ask_weather_farming_advice
-    entities:
-    - location
-  - action: action_get_weather
-
-- story: ask farming advice based on weather without location
+  - intent: organic_manures
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Clarify ambiguous intent
   steps:
-  - intent: ask_weather_farming_advice
-  - action: utter_ask_location
-  - intent: inform
-    entities:
-    - location
-  - action: action_get_weather
+  - action: action_classify_intent
+  - action: utter_ask_clarification
+- story: Handle follow-up after clarification
+  steps:
+  - action: utter_ask_clarification
+  - or:
+    - intent: coconut_general
+    - intent: climate_soils
+    - intent: coconut_varieties
+    - intent: cultivation_methods
+    - intent: nutrient_management
+    - intent: fertilizers
+    - intent: inter_cultivation
+    - intent: organic_manures
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle none intent with clarification
+  steps:
+  - intent: none
+  - action: utter_none
+  - action: utter_ask_clarification
+- story: Handle follow-up on nutrient management
+  steps:
+  - intent: nutrient_management
+  - action: action_classify_intent
+  - action: action_answer_query
+  - intent: nutrient_management
+  - action: action_classify_intent
+  - action: action_answer_query
+- story: Handle multi-intent query
+  steps:
+  - intent: multi_intent
+  - action: action_handle_multi_intent
