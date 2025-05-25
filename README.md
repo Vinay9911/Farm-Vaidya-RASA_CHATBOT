@@ -344,16 +344,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - RASA Open Source for the conversational AI framework
 - Groq for LLM integration capabilities
-- Ambajipeta Horticultural Research Station for coconut cultivation data
-- Dr. Y.S.R. Horticultural University for research contributions
 
-## 📞 Support
-
-For issues, questions, or contributions:
-- **GitHub Issues**: [Create an issue](https://github.com/Vinay9911/Farm-Vaidya-RASA_CHATBOT/issues)
-- **Email**: [Your support email]
-- **Documentation**: Check RASA documentation for framework-specific issues
-
----
-
-**Farm-Vaidya** - Empowering farmers with AI-driven coconut cultivation expertise! 🥥🌱
